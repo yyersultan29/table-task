@@ -1,2 +1,5 @@
-$blueish: #658bc7;
-$lightGreen: #00bb6d;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";

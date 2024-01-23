@@ -14,9 +14,8 @@ export const CheckBox: FC<IProps> = (props) => {
 
   return (
     <div className="container">
-      <input type="checkbox" id="myCheckbox" className="checkbox" {...otherProps} />
-      <label htmlFor="myCheckbox">{label}</label>
-
+      <input type="checkbox" id={`id_${label}`} className="checkbox" {...otherProps} />
+      <label htmlFor={`id_${label}`}>{label}</label>
     </div>
   )
 }

@@ -1,0 +1,124 @@
+.Button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  border-radius: 10px;
+  max-inline-size: 100%;
+  transition: background 0.3s ease;
+  font-weight: 500;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.loader {
+  cursor: progress;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.loading .text,
+.loading .addons {
+  opacity: 0;
+}
+
+.block {
+  width: 100%;
+}
+
+.addons {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+/** Button view primary */
+.Button--view-primary {
+  background-color: #624de3;
+  color: #fff;
+  &:hover {
+    background-color: #5743df;
+  }
+}
+
+// secondary
+.Button--view-secondary {
+  background-color: #c21cb4;
+  color: #fff;
+  &:hover {
+    background-color: #ad1aa1;
+  }
+}
+.Button--view-outlined {
+  background-color: #cac2fd;
+  color: #6a53f5;
+}
+.Button--view-tertiary {
+  background-color: #cfebdf;
+  color: #00bb6d;
+}
+.Button--view-ghost {
+  border: 1px solid #eaeaea;
+  background-color: inherit;
+}
+
+// TODO: other
+
+.Button--size-s {
+  min-width: 104px;
+  min-height: 40px;
+  padding: 0 28px;
+  font-size: 14px;
+}
+.Button--size-m {
+  min-width: 128px;
+  min-height: 56px;
+  padding: 0 28px;
+  font-size: 16px;
+}
+
+.Button--size-l {
+  min-width: 160px;
+  min-height: 64px;
+  padding: 0 32px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+// when disabled
+
+.Button:disabled {
+  &.Button--view-primary {
+    background-color: #9188c9;
+  }
+  &.Button--view-secondary {
+    background-color: #e77dde;
+  }
+
+  &:active {
+    opacity: inherit;
+  }
+}

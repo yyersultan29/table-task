@@ -14,7 +14,7 @@ export const Input: FC<IProps> = (props) => {
   return (
     <div className="input-container">
 
-      <label htmlFor="input">{label}</label>
+      {label && <label htmlFor="input">{label}</label>}
 
       <div className="input-area">
         <input type="text" id="input" style={{ paddingLeft: icon ? "36px" : "16px" }} {...otherProps} />
