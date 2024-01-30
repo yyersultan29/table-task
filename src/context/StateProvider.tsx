@@ -3,11 +3,11 @@ import { ChangeEvent, FC, ReactNode, useCallback, useEffect, useLayoutEffect, us
 import { StateContext } from "./StateContext";
 import { useSearchParams } from "react-router-dom";
 
-export interface StateProviderProps {
+export interface ProviderProps {
   children: ReactNode;
 }
 
-export const StateProvider: FC<StateProviderProps> = ({ children }) => {
+export const StateProvider: FC<ProviderProps> = ({ children }) => {
 
   const [params, setParams] = useSearchParams();
 

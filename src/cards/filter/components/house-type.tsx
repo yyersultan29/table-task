@@ -11,7 +11,7 @@ export const HouseTypeComponent: FC<IProps> = ({ type, handleChangeType }) => {
   return (
     <div className="flex flex-col gap-[13px]">
       <h3>Type</h3>
-      <div className="bg-[#FAFAFA] flex flex-col gap-[15px] px-[20px] py-[20px] rounded-lg border-2">
+      <div className=" flex flex-col gap-[15px] px-[20px] py-[20px] rounded-lg border-2">
         <CheckBox
           value="apartment"
           label="Apartment"
