@@ -1,4 +1,4 @@
-import { CardItem } from "./cards/card-item"
+import { CardList } from "./cards/card-list"
 import { Filter } from "./filter/filter"
 
 export const Cards = () => {
@@ -8,9 +8,7 @@ export const Cards = () => {
       <Filter />
 
       <div className="max-w-[1000px] flex flex-col gap-[15px]">
-        {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((_, index) => (
-          <CardItem key={index} />
-        ))}
+        <CardList />
       </div>
     </div>
   )

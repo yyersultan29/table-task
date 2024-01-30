@@ -57,32 +57,32 @@
 
 /** Button view primary */
 .Button--view-primary {
-  background-color: #624de3;
+  background-color: #624de3 !important;
   color: #fff;
   &:hover {
-    background-color: #5743df;
+    background-color: #5743df !important;
   }
 }
 
 // secondary
 .Button--view-secondary {
-  background-color: #c21cb4;
+  background-color: #c21cb4 !important;
   color: #fff;
   &:hover {
-    background-color: #ad1aa1;
+    background-color: #ad1aa1 !important;
   }
 }
 .Button--view-outlined {
-  background-color: #cac2fd;
+  background-color: #cac2fd !important;
   color: #6a53f5;
 }
 .Button--view-tertiary {
-  background-color: #cfebdf;
-  color: #00bb6d;
+  background-color: #cfebdf !important;
+  color: #00bb6d !important;
 }
 .Button--view-ghost {
-  border: 1px solid #eaeaea;
-  background-color: inherit;
+  border: 1px solid #eaeaea !important;
+  // background-color: inherit;
 }
 
 // TODO: other
@@ -112,13 +112,13 @@
 
 .Button:disabled {
   &.Button--view-primary {
-    background-color: #9188c9;
+    background-color: #9188c9 !important;
   }
   &.Button--view-secondary {
-    background-color: #e77dde;
+    background-color: #e77dde !important;
   }
 
-  &:active {
-    opacity: inherit;
-  }
+  // &:active {
+  //   opacity: inherit;
+  // }
 }

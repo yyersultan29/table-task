@@ -4,6 +4,7 @@ import countries from "../../../data/countries.json";
 import SearchIcon from "../../../assets/search.svg";
 import { Input } from "../../../components/input/input"
 import { CheckBox } from "../../../components/checkbox/checkbox"
+import { useDebounce } from "../../../utils/useDebounce";
 
 interface IProps {
   selectedCountries: string[],
@@ -14,13 +15,15 @@ export const CountryListCompoent: FC<IProps> = ({ selectedCountries, onSelectCou
 
   const [value, setValue] = useState("");
 
+  const debouncedValue = useDebounce(value, 500);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   const filteredCountList = useMemo(() => {
-    return countries.filter(country => country.name.includes(value));
-  }, [value]);
+    return Object.values(countries).filter(country => country.includes(debouncedValue));
+  }, [debouncedValue]);
 
   return (
     <div className="min-w-[325px] flex flex-col gap-[10px] ">
@@ -39,12 +42,12 @@ export const CountryListCompoent: FC<IProps> = ({ selectedCountries, onSelectCou
         flex-col border-2 rounded-xl 
         px-[20px] py-[24px]`}
       >
-        {filteredCountList.map((country) => (
+        {filteredCountList.map((country, index) => (
           <CheckBox
-            key={country.name}
-            label={country.name}
-            value={country.name}
-            checked={selectedCountries.includes(country.name)}
+            key={index}
+            label={country}
+            value={country}
+            checked={selectedCountries.includes(country)}
             onChange={onSelectCountry}
           />
         ))}
