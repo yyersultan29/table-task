@@ -1,0 +1,3 @@
+[submodule "ui-component"]
+	path = ui-component
+	url = https://github.com/yyersultan29/ui-component
