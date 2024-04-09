@@ -4,7 +4,8 @@ import { StateProvider } from './context/StateProvider';
 import "./App.scss"
 import { useTheme } from './context/ThemeProvider';
 import { Header } from './header/header';
-import {Navbar} from "../ui-component/src/components"
+import {Navbar, Tooltip} from "../ui-component/src/components"
+import { CheckBox } from './components/checkbox/checkbox';
 
 const App = () => {
   const { theme } = useTheme();
@@ -18,6 +19,8 @@ const App = () => {
       color: theme.text
     }}>
       <Navbar />
+      <Tooltip />
+
       
       <Header />
       <div className='flex justify-center p-[20px]'>
