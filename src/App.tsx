@@ -4,7 +4,7 @@ import { StateProvider } from './context/StateProvider';
 import "./App.scss"
 import { useTheme } from './context/ThemeProvider';
 import { Header } from './header/header';
-import {Navbar, Tooltip} from "../ui-component/src/components"
+import {Container, Navbar, Tooltip} from "../ui-component/src/components"
 import { CheckBox } from './components/checkbox/checkbox';
 
 const App = () => {
@@ -20,6 +20,10 @@ const App = () => {
     }}>
       <Navbar />
       <Tooltip />
+      
+      <Container className='bg-green-300 m-3'>
+        hello my name is Continer
+      </Container>
 
       
       <Header />
