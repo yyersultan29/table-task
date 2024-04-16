@@ -15,6 +15,9 @@ export const Cards = () => {
 
       <div>
         <ul><li>1</li></ul>
+        <h1>Card Name</h1>
+        <h6>How are you </h6>
+        <pre>Hello</pre>
       </div>
     </div>
   )

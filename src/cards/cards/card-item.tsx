@@ -5,7 +5,7 @@ import GoldStar from "../../assets/star-gold.png";
 import SilverStar from "../../assets/star-silver.png";
 import { Button } from "../../components/button/button";
 
-
+export const URL = "/main/filter"
 
 export const CardItem: FC<House> = (props) => {
   return (
