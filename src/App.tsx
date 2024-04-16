@@ -6,6 +6,9 @@ import { Header } from './header/header';
 import { useTheme } from './context/ThemeProvider';
 import { Navbar, Tooltip} from "../ui-component/src/components"
 
+
+export const text = "Changes from MASTER branch";
+
 const App = () => {
   const { theme } = useTheme();
 
