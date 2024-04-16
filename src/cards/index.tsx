@@ -7,6 +7,8 @@ export const Cards = () => {
     <div className="flex gap-[40px]">
       <Filter />
 
+      <h1>Test text</h1>
+
       <div className="max-w-[1000px] flex flex-col gap-[15px]">
         <CardList />
       </div>
