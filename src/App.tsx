@@ -4,7 +4,7 @@ import { StateProvider } from './context/StateProvider';
 import "./App.scss"
 import { useTheme } from './context/ThemeProvider';
 import { Header } from './header/header';
-import {Container, Navbar, Tooltip} from "../ui-component/src/components"
+import { Navbar, Tooltip} from "../ui-component/src/components"
 
 const App = () => {
   const { theme } = useTheme();
