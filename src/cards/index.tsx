@@ -11,6 +11,8 @@ export const Cards = () => {
         <CardList />
       </div>
 
+      <h1>Hello world</h1>
+
       <div>
         <ul><li>1</li></ul>
       </div>
