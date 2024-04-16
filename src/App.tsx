@@ -2,19 +2,21 @@ import { Cards } from './cards';
 import { StateProvider } from './context/StateProvider';
 
 import "./App.scss"
-import { useTheme } from './context/ThemeProvider';
 import { Header } from './header/header';
+import { useTheme } from './context/ThemeProvider';
 import { Navbar, Tooltip} from "../ui-component/src/components"
 
 const App = () => {
   const { theme } = useTheme();
 
+  const size = 24;
   return (
 
     <div style={{
       background: theme.background,
       color: theme.text
     }}>
+      {size + 1}
       <Navbar />
       <Tooltip />
       <Header />
