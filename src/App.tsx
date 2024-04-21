@@ -1,33 +1,26 @@
-import { Cards } from './cards';
-import { StateProvider } from './context/StateProvider';
 
 import "./App.scss"
-import { Header } from './header/header';
-import { useTheme } from './context/ThemeProvider';
-import { Navbar, Tooltip} from "../ui-component/src/components"
+import DropdownWithSlider from "./components/dropdown/dropdown";
+import { ModelsDropdown } from "./components/dropdown/models-dropdown";
+import { CustomDropDown } from "./components/dropdown/cutom-dropdown";
+
+
 
 
 export const text = "Changes from MASTER branch";
 
 const App = () => {
-  const { theme } = useTheme();
 
-  const size = 24;
   return (
+    
+    <div className="p-7 flex gap-[40px]">
+     
+     <DropdownWithSlider />
 
-    <div style={{
-      background: theme.background,
-      color: theme.text
-    }}>
-      {size + 1}
-      <Navbar />
-      <Tooltip />
-      <Header />
-      <div className='flex justify-center p-[20px]'>
-        <StateProvider>
-          <Cards />
-        </StateProvider>
-      </div>
+     <ModelsDropdown />
+
+     <CustomDropDown />
+
     </div>
 
   );
