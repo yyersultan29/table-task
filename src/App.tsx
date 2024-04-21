@@ -10,7 +10,6 @@ import { Navbar, Tooltip} from "../ui-component/src/components"
 const App = () => {
   const { theme } = useTheme();
 
-  const size = 24;
   return (
 
     <div style={{
@@ -18,7 +17,7 @@ const App = () => {
       color: theme.text
     }}>
       <h1>Life is good</h1>
-      {size + 1}
+
       <Navbar />
       <Tooltip />
       <Header />
