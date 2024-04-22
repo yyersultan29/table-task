@@ -67,11 +67,6 @@ export type ComponentProps = {
   */
 
   /**
-   * Allows to use custom components for btn ( f.ex: Link of router ) 
-  */
-  // Component?: ElementType;
-
-  /**
    * To show loading
    */
   loading?: boolean;
@@ -113,14 +108,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
   ) => {
 
-
     const [loaderTimePassed, setLoaderTimePassed] = useState(true);
 
     const timerId = useRef(0);
 
     const showLoader = loading || !loaderTimePassed;
-
-
 
     useEffect(() => {
       if (loading) {

@@ -1,12 +1,8 @@
-import { Button } from "../components/button/button"
 import { useTheme } from "../context/ThemeProvider"
-
+import { Button } from "../components/button/button"
 
 export const Header = () => {
   const { toggleTheme } = useTheme();
-
-  // console.log(theme);
-
 
   return (
     <header className='w-full bg-gray-600 p-[10px]'>
@@ -14,7 +10,6 @@ export const Header = () => {
         <Button view="ghost" onClick={toggleTheme} >Light</Button>
         <Button view="primary" onClick={toggleTheme}>Dark</Button>
       </div>
-
     </header>
   )
 }

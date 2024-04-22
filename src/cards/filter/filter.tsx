@@ -1,6 +1,5 @@
 import { useContext, } from "react"
 
-
 import { Price } from "./components/price"
 import { HouseType } from "./components/house-type"
 import { RatingStar } from "./components/rating-star"
@@ -23,10 +22,6 @@ export const Filter = () => {
     handleChangeStars,
     handleChangeType,
     handleSelectCountry } = useContext(StateContext) as MyContextValues;
-
-
-
-
 
   return (
     <div className="w-[325px] flex flex-col gap-[25px]">
@@ -55,8 +50,9 @@ export const Filter = () => {
 
       <div className="flex flex-col gap-[15px]">
         <Button view="secondary" >Submit</Button>
-        <Button view="ghost">x Clear Filter</Button>
+        <Button view="ghost">Clear Filter</Button>
       </div>
+    
     </div>
   )
 }

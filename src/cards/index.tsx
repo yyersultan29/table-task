@@ -1,5 +1,5 @@
-import { CardList } from "./cards/card-list"
 import { Filter } from "./filter/filter"
+import { CardList } from "./cards/card-list"
 
 export const Cards = () => {
 
@@ -10,15 +10,7 @@ export const Cards = () => {
       <div className="max-w-[1000px] flex flex-col gap-[15px]">
         <CardList />
       </div>
-
-      <h1>Hello world</h1>
-
-      <div>
-        <ul><li>1</li></ul>
-        <h1>Card Name</h1>
-        <h6>How are you </h6>
-        <pre>Hello</pre>
-      </div>
+  
     </div>
   )
 }
