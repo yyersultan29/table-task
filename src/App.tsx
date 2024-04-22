@@ -5,6 +5,7 @@ import "./App.scss"
 import { Header } from './header/header';
 import { useTheme } from './context/ThemeProvider';
 import { Navbar, Tooltip} from "../ui-component/src/components"
+import {ArrowIcon} from "../ui-component/src/components/icons/arrow";
 
 
 const App = () => {
@@ -16,8 +17,6 @@ const App = () => {
       background: theme.background,
       color: theme.text
     }}>
-      <h1>Life is good</h1>
-
       <Navbar />
       <Tooltip />
       <Header />
@@ -25,6 +24,7 @@ const App = () => {
         <StateProvider>
           <Cards />
         </StateProvider>
+        <ArrowIcon />
       </div>
     </div>
 
