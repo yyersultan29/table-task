@@ -8,7 +8,6 @@ interface PaginationProps {
 
 export const Pagination: React.FC<PaginationProps> = (props) => {
   const { currentPage, maxPage, onChange } = props;
-  if (maxPage === 0) return null;
 
   const range = (start: number, end: number): number[] => {
     const length = end - start + 1;
@@ -59,6 +58,7 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
       onChange(page);
     }
   };
+  if (maxPage === 0) return null;
 
   return (
     <div
