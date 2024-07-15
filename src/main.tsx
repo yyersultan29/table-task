@@ -3,6 +3,7 @@ import App from './App.tsx'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeProvider.tsx'
+import 'simple-notify/dist/simple-notify.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>

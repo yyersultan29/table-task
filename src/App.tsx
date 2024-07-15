@@ -1,34 +1,20 @@
-import { Cards } from './cards';
-import { StateProvider } from './context/StateProvider';
+import { useEffect, useRef } from "react";
+import "./App.scss";
+import { load } from "@2gis/mapgl";
+// import { useEffect } from "react";
+import Cookeis from "js-cookie";
+import { YMap, YMapsProvider } from "re-ymaps";
 
-import "./App.scss"
-import { Header } from './header/header';
-import { useTheme } from './context/ThemeProvider';
-import { Navbar, Tooltip} from "../ui-component/src/components"
-import {ArrowIcon} from "../ui-component/src/components/icons/arrow";
+// const getRandomList = () => new Array(10_000).fill(0).map((_,index) => Math.random());
 
-
-const App = () => {
-  const { theme } = useTheme();
-
+export default function App() {
   return (
-
-    <div style={{
-      background: theme.background,
-      color: theme.text
-    }}>
-      <Navbar />
-      <Tooltip />
-      <Header />
-      <div className='flex justify-center p-[20px]'>
-        <StateProvider>
-          <Cards />
-        </StateProvider>
-        <ArrowIcon />
-      </div>
+    <div className="App flex flex-col gap-5">
+      <h1>2GIS MAP</h1>
+      {/* map container */}
+      <YMapsProvider>
+        <YMap></YMap>
+      </YMapsProvider>
     </div>
-
   );
-};
-
-export default App;
+}
