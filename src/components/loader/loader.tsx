@@ -5,7 +5,7 @@ import cn from "classnames";
 import styles from "./loader.module.scss";
 
 interface LoaderProps {
-  className?: string
+  className?: string;
 }
 
 export const Loader: FC<LoaderProps> = ({ className }) => {
@@ -24,5 +24,5 @@ export const Loader: FC<LoaderProps> = ({ className }) => {
       <div />
       <div />
     </div>
-  )
-}
+  );
+};

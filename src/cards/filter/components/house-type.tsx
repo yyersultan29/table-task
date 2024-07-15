@@ -1,13 +1,12 @@
-import { ChangeEvent, FC, memo } from "react"
-import { CheckBox } from "../../../components/checkbox/checkbox"
+import { ChangeEvent, FC, memo } from "react";
+import { CheckBox } from "../../../components/checkbox/checkbox";
 
 interface IProps {
-  type: string[],
+  type: string[];
   handleChangeType: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const HouseTypeComponent: FC<IProps> = ({ type, handleChangeType }) => {
-
   return (
     <div className="flex flex-col gap-[13px]">
       <h3>Type</h3>
@@ -16,15 +15,17 @@ export const HouseTypeComponent: FC<IProps> = ({ type, handleChangeType }) => {
           value="apartment"
           label="Apartment"
           checked={type.includes("apartment")}
-          onChange={handleChangeType} />
+          onChange={handleChangeType}
+        />
         <hr />
         <CheckBox
           value="hotel"
           label="Hotel"
           checked={type.includes("hotel")}
-          onChange={handleChangeType} />
+          onChange={handleChangeType}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 export const HouseType = memo(HouseTypeComponent);

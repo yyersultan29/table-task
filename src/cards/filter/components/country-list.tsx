@@ -2,17 +2,19 @@ import { ChangeEvent, FC, memo, useMemo, useState } from "react";
 
 import countries from "../../../data/countries.json";
 import SearchIcon from "../../../assets/search.svg";
-import { Input } from "../../../components/input/input"
-import { CheckBox } from "../../../components/checkbox/checkbox"
+import { Input } from "../../../components/input/input";
+import { CheckBox } from "../../../components/checkbox/checkbox";
 import { useDebounce } from "../../../utils/useDebounce";
 
 interface IProps {
-  selectedCountries: string[],
-  onSelectCountry: (e: ChangeEvent<HTMLInputElement>) => void
+  selectedCountries: string[];
+  onSelectCountry: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const CountryListCompoent: FC<IProps> = ({ selectedCountries, onSelectCountry }) => {
-
+export const CountryListCompoent: FC<IProps> = ({
+  selectedCountries,
+  onSelectCountry,
+}) => {
   const [value, setValue] = useState("");
 
   const debouncedValue = useDebounce(value, 500);
@@ -22,12 +24,13 @@ export const CountryListCompoent: FC<IProps> = ({ selectedCountries, onSelectCou
   };
 
   const filteredCountList = useMemo(() => {
-    return Object.values(countries).filter(country => country.includes(debouncedValue));
+    return Object.values(countries).filter((country) =>
+      country.includes(debouncedValue),
+    );
   }, [debouncedValue]);
 
   return (
     <div className="min-w-[325px] flex flex-col gap-[10px] ">
-
       <Input
         label="Country"
         placeholder="Search country"
@@ -52,8 +55,7 @@ export const CountryListCompoent: FC<IProps> = ({ selectedCountries, onSelectCou
           />
         ))}
       </div>
-
     </div>
-  )
-}
+  );
+};
 export const CountryList = memo(CountryListCompoent);

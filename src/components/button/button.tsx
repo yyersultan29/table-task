@@ -1,10 +1,16 @@
-import { ButtonHTMLAttributes, ReactNode, forwardRef, useEffect, useRef, useState } from "react"
+import {
+  ButtonHTMLAttributes,
+  ReactNode,
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import cn from "classnames";
 
 import styles from "./button.module.scss";
 import { Loader } from "../loader/loader";
-
 
 const styleSize = {
   s: styles["Button--size-s"],
@@ -19,52 +25,51 @@ const stylesView = {
   outlined: styles["Button--view-outlined"],
   filled: styles["Button--view-filled"],
   link: styles["Button--view-link"],
-  ghost: styles["Button--view-ghost"]
-}
-
+  ghost: styles["Button--view-ghost"],
+};
 
 export type ComponentProps = {
   /**
    * Button type
    */
   view?:
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'outlined' // deprecated
-  | 'filled' // deprecated
-  | 'link'
-  | 'ghost';
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "outlined" // deprecated
+    | "filled" // deprecated
+    | "link"
+    | "ghost";
 
   /**
-   * to put something 
+   * to put something
    */
   leftAddons?: ReactNode;
 
   /**
-   * to put something 
+   * to put something
    */
   rightAddons?: ReactNode;
 
   /**
    * Btn size
-  */
+   */
 
-  size?: "s" | "m" | "l"
+  size?: "s" | "m" | "l";
 
   /**
    * to make width full w-100%
-  */
+   */
   block?: boolean;
 
   /**
    * Additional classes
-  */
+   */
   className?: string;
 
   /**
-   * Link btn 
-  */
+   * Link btn
+   */
 
   /**
    * To show loading
@@ -80,12 +85,11 @@ export type ComponentProps = {
    * Set of colors for btn
    */
   colors?: "default" | "inverted";
+};
 
-}
-
-
-export interface ButtonProps extends ComponentProps, ButtonHTMLAttributes<HTMLButtonElement> { }
-
+export interface ButtonProps
+  extends ComponentProps,
+    ButtonHTMLAttributes<HTMLButtonElement> {}
 
 // min time to display loader
 export const LOADER_MIN_TIME = 500;
@@ -104,10 +108,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       ...restProps
     },
-    ref
-
+    ref,
   ) => {
-
     const [loaderTimePassed, setLoaderTimePassed] = useState(true);
 
     const timerId = useRef(0);
@@ -129,9 +131,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       };
     }, []);
 
-
-    const { disabled, type = "button", ...restButtonProps } = restProps as ButtonHTMLAttributes<HTMLButtonElement>;
-
+    const {
+      disabled,
+      type = "button",
+      ...restButtonProps
+    } = restProps as ButtonHTMLAttributes<HTMLButtonElement>;
 
     return (
       <button
@@ -148,29 +152,22 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || showLoader}
         ref={ref}
       >
-
-        {leftAddons &&
-          <span className={styles.addons}>
-            {leftAddons}
-          </span>
-        }
+        {leftAddons && <span className={styles.addons}>{leftAddons}</span>}
 
         {children && (
-          <span className={cn(styles.text, { [styles.stretchText]: !(leftAddons || rightAddons) })}>
+          <span
+            className={cn(styles.text, {
+              [styles.stretchText]: !(leftAddons || rightAddons),
+            })}
+          >
             {children}
           </span>
         )}
 
-        {showLoader &&
-          <Loader className={styles.loader} />
-        }
+        {showLoader && <Loader className={styles.loader} />}
 
-        {rightAddons &&
-          <span className={styles.addons}>
-            {rightAddons}
-          </span>
-        }
-
+        {rightAddons && <span className={styles.addons}>{rightAddons}</span>}
       </button>
-    )
-  });
+    );
+  },
+);

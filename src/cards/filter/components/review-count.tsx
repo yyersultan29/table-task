@@ -1,13 +1,15 @@
-import { ChangeEvent, FC, memo } from "react"
-import { Input } from "../../../components/input/input"
+import { ChangeEvent, FC, memo } from "react";
+import { Input } from "../../../components/input/input";
 
 interface IProps {
   reviewCount: number;
-  handleChangeReviewCount: (e: ChangeEvent<HTMLInputElement>) => void
+  handleChangeReviewCount: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const ReviewCountComponent: FC<IProps> = ({ reviewCount, handleChangeReviewCount }) => {
-
+export const ReviewCountComponent: FC<IProps> = ({
+  reviewCount,
+  handleChangeReviewCount,
+}) => {
   return (
     <Input
       label="Number of reviews (from)"
@@ -15,8 +17,7 @@ export const ReviewCountComponent: FC<IProps> = ({ reviewCount, handleChangeRevi
       value={reviewCount}
       onChange={handleChangeReviewCount}
     />
-  )
-}
-
+  );
+};
 
 export const ReviewCount = memo(ReviewCountComponent);
